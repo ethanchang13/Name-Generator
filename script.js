@@ -60,7 +60,9 @@ function genSuffix(favoriteAnimal) {
 }
 
 //Master Name Building Function
-function genFullName() {
+function genFullName(event) {
+  event.preventDefault();
+
   //Get the users inputs from HTML elements
   const firstName = document.getElementById("firstName").value.trim();
   const lastName = document.getElementById("lastName").value.trim();
@@ -82,11 +84,16 @@ function genFullName() {
   const capitalizedLastName = capitalize(newLastName);
 
   //Combine all of the name variables in a new name
+  const fullName = `${capitalizedPrefix} ${capitalizedFirstName} ${capitalizedMiddleName} ${capitalizedLastName} ${suffix}`;
 
-  //Display the new name
+  // Display the new name
+  document.getElementById('result').textContent = fullName;
 }
 
 //Capitalization Function
 function capitalize(input) {
   return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
 }
+
+// Add Event Listener to the Form
+document.getElementById('fantasyForm').addEventListener('submit', genFullName);

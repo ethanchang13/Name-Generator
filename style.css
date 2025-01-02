@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Garamond", serif;
+  background: linear-gradient(to right, #31485f, #4ca1af);
+  background-size: cover;
+  color: #ecf0f1;
+  line-height: 1.6;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
+/* header */
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 3rem;
+  color: #e3a034;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 400;
+}
+
+/* instructions */
+.text-center h3 {
+  font-size: 2rem;
+  color: #e3a034;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* input */
+.form-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+.form-control,
+.form-select {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #3d566e;
+  background-color: #a5beb2;
+  color: #153a42;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #4e8c72;
+  outline: none;
+  box-shadow: 0 0 5px rgba(122, 238, 147, 0.7);
+}
+
+/* button */
+.btn-primary {
+  background-color: #5179a7;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #718ed3;
+}
+
+/* form container */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(44, 62, 80, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  margin-bottom: 30px;
+}
+
+/* printed result */
+.result {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  color: #e3a034;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  padding-bottom: 10px;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #ecf0f1;
+  background-color: #1c252e;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+/* placeholder text */
+::placeholder {
+  color: #95a5a6;
+  opacity: 1;
+  font-weight: bold;
+}

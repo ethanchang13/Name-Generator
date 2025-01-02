@@ -13,13 +13,13 @@ function genPrefix(firstName) {
 function genFirstName(firstName) {
   const firstLetter = firstName.charAt(0).toLowerCase();
   switch (firstLetter) {
-    case 'a':
+    case "a":
       return "Jeff";
-    case 'b':
+    case "b":
       return "Pablo";
-    case 'c':
+    case "c":
       return "Mia";
-    case 'd':
+    case "d":
       return "Liam";
     default:
       return "Julian";
@@ -59,12 +59,40 @@ function genLastName(lastName) {
 
 // Generate Suffix
 function genSuffix(favoriteAnimal) {
-  return `of ${favoriteAnimal} clan.`;
+  return `of ${favoriteAnimal} clan`;
+}
+
+// Function to check if all form fields have input
+function checkFormFields() {
+  const firstName = document.getElementById("firstName").value.trim();
+  const lastName = document.getElementById("lastName").value.trim();
+  const roadType = document.getElementById("roadType").value.trim();
+  const favoriteColor = document.getElementById("favoriteColor").value.trim();
+  const favoriteAnimal = document.getElementById("favoriteAnimal").value.trim();
+
+  // Check if any of the fields are empty or if road type is the default value
+  if (
+    !firstName ||
+    !lastName ||
+    !roadType ||
+    roadType === "Select Road Type" ||
+    !favoriteColor ||
+    !favoriteAnimal
+  ) {
+    alert("Please fill in all the fields.");
+    return false;
+  }
+  return true;
 }
 
 // Master Name Building Function
 function genFullName(event) {
   event.preventDefault();
+
+  // Check if all form fields are filled
+  if (!checkFormFields()) {
+    return;
+  }
 
   // Get the users inputs from HTML elements
   const firstName = document.getElementById("firstName").value.trim();
@@ -90,7 +118,7 @@ function genFullName(event) {
   const fullName = `${capitalizedPrefix} ${capitalizedFirstName} ${capitalizedMiddleName} ${capitalizedLastName} ${suffix}`;
 
   // Display the new name
-  document.getElementById('result').textContent = fullName;
+  document.getElementById("result").textContent = fullName;
 }
 
 // Capitalization Function
@@ -99,4 +127,4 @@ function capitalize(input) {
 }
 
 // Add Event Listener to the Form
-document.getElementById('fantasyForm').addEventListener('submit', genFullName);
+document.getElementById("fantasyForm").addEventListener("submit", genFullName);
